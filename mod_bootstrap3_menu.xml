@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-	<name>mod_bootstrap3_menu</name>
+	<name>Bootstrap 3 Menu</name>
 	<author>Rene Kreijveld</author>
 	<creationDate>October 2014</creationDate>
 	<copyright>Copyright (C) 2014 DSD business internet. Based on the original work of Open Source Matters, Inc. All rights reserved.</copyright>
@@ -17,10 +17,10 @@
 		<filename>mod_bootstrap3_menu.xml</filename>
 	</files>
 	<languages>
-		<language tag="en-GB">en-GB.mod_menu.ini</language>
-		<language tag="en-GB">en-GB.mod_menu.sys.ini</language>
-		<language tag="nl-NL">nl-NL.mod_menu.ini</language>
-		<language tag="nl-NL">nl-NL.mod_menu.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_bootstrap3_menu.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_bootstrap3_menu.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_bootstrap3_menu.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_bootstrap3_menu.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
@@ -86,6 +86,21 @@
 					description="MOD_BOOTSTRAP3_MENU_FIELD_ALLCHILDREN_DESC">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="BOOTSTRAP3">
+				<field
+					name="bs3MenuType"
+					type="list"
+					default="nav-pills"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3MENUTYPE_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3MENUTYPE_DESC"
+				>
+					<option value="nav-pills">Pills</option>
+					<option value="nav-pills nav-stacked">Pills stacked</option>
+					<option value="nav-tabs">Tabs</option>
+					<option value="navbar-nav">Navbar</option>
 				</field>
 			</fieldset>
 

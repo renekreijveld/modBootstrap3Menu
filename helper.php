@@ -11,13 +11,13 @@
 defined('_JEXEC') or die;
 
 /**
- * Helper for mod_menu
+ * Helper for mod_bootstrap3_menu
  *
  * @package     Joomla.Site
- * @subpackage  mod_menu
+ * @subpackage  mod_bootstrap3_menu
  * @since       1.5
  */
-class ModMenuHelper
+class ModBootstrap3MenuHelper
 {
 	/**
 	 * Get a list of the menu items.
@@ -39,7 +39,7 @@ class ModMenuHelper
 		$levels = $user->getAuthorisedViewLevels();
 		asort($levels);
 		$key = 'menu_items' . $params . implode(',', $levels) . '.' . $base->id;
-		$cache = JFactory::getCache('mod_menu', '');
+		$cache = JFactory::getCache('mod_bootstrap3_menu', '');
 
 		if (!($items = $cache->get($key)))
 		{
