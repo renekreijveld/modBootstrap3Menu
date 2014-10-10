@@ -10,11 +10,25 @@
 
 defined('_JEXEC') or die;
 
+if ($bs3dropdwn == 1)
+{
+	$document = JFactory::getDocument();
+	if ($bs3ddanim == 1)
+	{
+		$document->addScript(JURI::base(true).'/modules/mod_bootstrap3_menu/assets/bootstrap.dropdown.hover.animate.min.js');
+	}
+	else
+	{
+		$document->addScript(JURI::base(true).'/modules/mod_bootstrap3_menu/assets/bootstrap.dropdown.hover.display.min.js');
+	}
+}
+
 // Note. It is important to remove spaces between elements.
 ?>
 <?php // The menu class is deprecated. Use nav instead. ?>
-<ul class="nav <?php echo $bs3type;?> <?php echo $class_sfx;?>"<?php
+<ul class="bs3menu <?php if ($bs3type != 'flat') echo 'nav '.$bs3type;?> <?php echo $class_sfx;?>"<?php
 	$tag = '';
+	$level = 1;
 
 	if ($params->get('tag_id') != null)
 	{
@@ -60,9 +74,19 @@ foreach ($list as $i => &$item)
 		$class .= ' deeper';
 	}
 
+	$item->isParentAnchor = false;
+
 	if ($item->parent)
 	{
-		$class .= ' parent';
+		if ($bs3dropdwn == 1)
+		{
+			$class .= ' dropdown';
+		}
+		else
+		{
+			$class .= ' parent';
+		}
+		$item->isParentAnchor = true;
 	}
 
 	if (!empty($class))
@@ -89,18 +113,41 @@ foreach ($list as $i => &$item)
 	// The next item is deeper.
 	if ($item->deeper)
 	{
-		echo '<ul class="nav-child unstyled small">';
+		if ($bs3dropdwn == 1)
+		{
+			echo '<ul class="dropdown-menu" role="menu">';
+		}
+		else
+		{
+			echo '<ul class="nav-child" role="menu">';
+			$level ++;
+		}
+
 	}
 	elseif ($item->shallower)
 	{
 		// The next item is shallower.
 		echo '</li>';
 		echo str_repeat('</ul></li>', $item->level_diff);
+		$level--;
 	}
 	else
 	{
 		// The next item is on the same level.
 		echo '</li>';
 	}
+
+	if ($level == 1 && $bs3type == 'flat')
+	{
+		end($list);
+	    if ($i !== key($list))
+	    {
+	    	echo '<li class="flatseparator">';
+	    	if ($bs3sepkind == 1) echo '<i class="fa ' . $bs3fachr  . '"></i>';
+	    	if ($bs3sepkind == 2) echo $bs3flatchr;
+	    	echo '</li>';
+	    }
+	}
+
 }
 ?></ul>

@@ -11,8 +11,23 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-$class = $item->anchor_css ? 'class="' . $item->anchor_css . '" ' : '';
-$title = $item->anchor_title ? 'title="' . $item->anchor_title . '" ' : '';
+$itemAttributes = array();
+$itemAttributes['class'] = $item->anchor_css ? $item->anchor_css : null;
+$itemAttributes['title'] = $item->anchor_title ? $item->anchor_title : null;
+
+// Convert attributes to string
+$attributes = '';
+
+if (!empty($itemAttributes))
+{
+	foreach ($itemAttributes as $attribute => $value)
+	{
+		if (null !== $value)
+		{
+			$attributes .= ' ' . $attribute . '="' . trim((string) $value) . '"';
+		}
+	}
+}
 
 if ($item->menu_image)
 {
@@ -23,6 +38,14 @@ if ($item->menu_image)
 else
 {
 	$linktype = $item->title;
+}
+
+// Add Bootstrap caret
+if ($item->isParentAnchor && $bs3dropdwn == 1)
+{
+	if ($bs3caret == 1) $linktype .= ' <span class="caret"></span>';
+	if ($bs3caret == 2) $linktype .= ' <i class="fa '.$bs3facaret.'"></i>';
+	if ($attributes == '') $attributes = 'class="dropdown-toggle" data-toggle="dropdown" ';
 }
 
 switch ($item->browserNav)

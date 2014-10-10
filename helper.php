@@ -51,6 +51,11 @@ class ModBootstrap3MenuHelper
 
 			$lastitem = 0;
 
+			if ($params->get('bs3MenuType') == 'flat')
+			{
+				$end = $start;
+			}
+
 			if ($items)
 			{
 				foreach ($items as $i => $item)

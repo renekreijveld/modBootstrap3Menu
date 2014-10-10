@@ -11,6 +11,7 @@
 	<description>MOD_BOOTSTRAP3_MENU_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_bootstrap3_menu">mod_bootstrap3_menu.php</filename>
+		<folder>assets</folder>
 		<folder>tmpl</folder>
 		<filename>helper.php</filename>
 		<filename>index.html</filename>
@@ -87,9 +88,7 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-			</fieldset>
 
-			<fieldset name="BOOTSTRAP3">
 				<field
 					name="bs3MenuType"
 					type="list"
@@ -97,11 +96,80 @@
 					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3MENUTYPE_LABEL"
 					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3MENUTYPE_DESC"
 				>
-					<option value="nav-pills">Pills</option>
-					<option value="nav-pills nav-stacked">Pills stacked</option>
-					<option value="nav-tabs">Tabs</option>
-					<option value="navbar-nav">Navbar</option>
+					<option value="nav-pills">Bootstrap Pills</option>
+					<option value="nav-pills nav-stacked">Bootstrap Pills stacked</option>
+					<option value="nav-tabs">Bootstrap Tabs</option>
+					<option value="navbar-nav">Bootstrap Navbar</option>
+					<option value="flat">Flat</option>
 				</field>
+			</fieldset>
+
+			<fieldset name="BOOTSTRAP3">
+				<field
+					name="bs3Dropdown"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3DROPDOWN_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3DROPDOWN_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="bs3DDAnimate"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3DDANIMATE_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3DDANIMATE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="bs3Caret"
+					type="list"
+					default="1"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_DESC">
+					<option value="1">Bootstrap</option>
+					<option value="2">Font Awesome</option>
+					<option value="3">MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_VALUE_NONE</option>
+				</field>
+
+				<field
+					name="bs3FACaret"
+					type="text"
+					default="fa-caret-down"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARET_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_DESC" />
+			</fieldset>
+
+			<fieldset name="FLAT">
+				<field
+					name="bs3SepKind"
+					type="list"
+					default="1"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3SEPKIND_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3SEPKIND_DESC">
+					<option value="1">Font Awesome</option>
+					<option value="2">MOD_BOOTSTRAP3_MENU_FIELD_BS3SEPKIND_VALUE_CHAR</option>
+				</field>
+
+				<field
+					name="bs3FAFlatChar"
+					type="text"
+					default="fa-circle"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FAFLATCHAR_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3FAFLATCHAR_DESC" />
+
+				<field
+					name="bs3FlatChar"
+					type="text"
+					default="|"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FLATCHAR_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3FLATCHAR_DESC" />
 			</fieldset>
 
 			<fieldset

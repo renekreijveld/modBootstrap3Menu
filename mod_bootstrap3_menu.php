@@ -22,6 +22,13 @@ $path		= $base->tree;
 $showAll	= $params->get('showAllChildren');
 $class_sfx	= htmlspecialchars($params->get('class_sfx'));
 $bs3type    = $params->get('bs3MenuType');
+$bs3dropdwn = $params->get('bs3Dropdown');
+$bs3ddanim  = $params->get('bs3DDAnimate');
+$bs3caret   = $params->get('bs3Caret');
+$bs3facaret = $params->get('bs3FACaret');
+$bs3sepkind = $params->get('bs3SepKind');
+$bs3fachr   = $params->get('bs3FAFlatChar');
+$bs3flatchr = $params->get('bs3FlatChar');
 
 if (count($list))
 {
