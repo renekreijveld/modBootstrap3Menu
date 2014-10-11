@@ -81,6 +81,7 @@ foreach ($list as $i => &$item)
 		if ($bs3dropdwn == 1)
 		{
 			$class .= ' dropdown';
+			if ($level > 1) $class .= ' dropdown-submenu';
 		}
 		else
 		{
@@ -120,8 +121,8 @@ foreach ($list as $i => &$item)
 		else
 		{
 			echo '<ul class="nav-child" role="menu">';
-			$level ++;
 		}
+		$level++;
 
 	}
 	elseif ($item->shallower)
