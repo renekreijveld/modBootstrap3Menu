@@ -23,6 +23,7 @@ $showAll	= $params->get('showAllChildren');
 $class_sfx	= htmlspecialchars($params->get('class_sfx'));
 $bs3type    = $params->get('bs3MenuType');
 $bs3dropdwn = $params->get('bs3Dropdown');
+$bs3css     = $params->get('bs3LoadCSS');
 $bs3ddanim  = $params->get('bs3DDAnimate');
 $bs3facaret = $params->get('bs3FACaret');
 $bs3facarr  = $params->get('bs3FACaretR');

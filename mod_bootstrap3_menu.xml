@@ -117,6 +117,17 @@
 				</field>
 
 				<field
+					name="bs3LoadCSS"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3LOADCSS_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3LOADCSS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
 					name="bs3DDAnimate"
 					type="radio"
 					class="btn-group btn-group-yesno"
