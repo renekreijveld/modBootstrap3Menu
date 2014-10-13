@@ -108,7 +108,7 @@ foreach ($list as $i => &$item)
 			break;
 
 		default:
-			require JModuleHelper::getLayoutPath('mod_bootstrap_menu', 'default_url');
+			require JModuleHelper::getLayoutPath('mod_bootstrap3_menu', 'default_url');
 			break;
 	endswitch;
 
