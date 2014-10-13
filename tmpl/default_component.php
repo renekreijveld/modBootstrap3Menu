@@ -43,8 +43,8 @@ else
 // Add Bootstrap caret
 if ($item->isParentAnchor && $bs3dropdwn == 1)
 {
-	if ($bs3caret == 1 && $item->level == 1) $linktype .= ' <span class="caret"></span>';
-	if ($bs3caret == 2) $linktype .= ' <i class="fa '.$bs3facaret.'"></i>';
+	if ($level == 1) $linktype .= ' <i class="fa '.$bs3facaret.'"></i>';
+	if ($level > 1) $linktype .= ' <i class="fa '.$bs3facarr.'"></i>';
 	if ($attributes == '') $attributes = 'class="dropdown-toggle" data-toggle="dropdown" ';
 }
 

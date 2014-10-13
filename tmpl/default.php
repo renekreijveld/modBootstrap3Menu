@@ -21,6 +21,7 @@ if ($bs3dropdwn == 1)
 	{
 		$document->addScript(JURI::base(true).'/modules/mod_bootstrap3_menu/assets/bootstrap.dropdown.hover.display.min.js');
 	}
+	$document->addStyleSheet('/modules/mod_bootstrap3_menu/assets/bootstrap3_menu.css');
 }
 
 // Note. It is important to remove spaces between elements.

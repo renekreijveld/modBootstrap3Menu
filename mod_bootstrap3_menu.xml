@@ -128,22 +128,19 @@
 				</field>
 
 				<field
-					name="bs3Caret"
-					type="list"
-					default="1"
-					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_LABEL"
-					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_DESC">
-					<option value="1">Bootstrap</option>
-					<option value="2">Font Awesome</option>
-					<option value="3">MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_VALUE_NONE</option>
-				</field>
-
-				<field
 					name="bs3FACaret"
 					type="text"
 					default="fa-caret-down"
 					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARET_LABEL"
 					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_DESC" />
+
+				<field
+					name="bs3FACaretR"
+					type="text"
+					default="fa-caret-right"
+					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARETR_LABEL"
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARETR_DESC" />
+
 			</fieldset>
 
 			<fieldset name="FLAT">
