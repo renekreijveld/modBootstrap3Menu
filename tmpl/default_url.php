@@ -11,8 +11,9 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-$class = $item->anchor_css ? 'class="' . $item->anchor_css . '" ' : '';
-$title = $item->anchor_title ? 'title="' . $item->anchor_title . '" ' : '';
+$attribute = '';
+$class = $item->anchor_css ? $item->anchor_css : '';
+$title = $item->anchor_title ? $item->anchor_title : '';
 
 if ($item->menu_image)
 	{
@@ -25,17 +26,33 @@ else
 	$linktype = $item->title;
 }
 
+// Add Bootstrap caret
+if ($item->isParentAnchor && $bs3dropdwn == 1)
+{
+    if ($level == 1) $linktype .= ' <i class="fa '.$bs3facaret.'"></i>';
+    if ($level > 1) $linktype .= ' <i class="fa '.$bs3facarr.'"></i>';
+    $class .= ' dropdown-toggle';
+    # for Windows Phone 7.5 which has trouble with :hover
+    //$attribute .= ' aria-haspopup="true"';
+    $attribute .= 'data-toggle="dropdown"';
+    $attribute .= ' role="button"';
+    $attribute .= ' aria-expanded="false"';
+}
+
 $flink = $item->flink;
 $flink = JFilterOutput::ampReplace(htmlspecialchars($flink));
+
+$class = $class ? 'class="' . $class . '" ' : '';
+$title = $title ? 'title="' . $title . '" ' : '';
 
 switch ($item->browserNav) :
 	default:
 	case 0:
-?><a <?php echo $class; ?>href="<?php echo $flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a <?php echo $class; ?>href="<?php echo $flink; ?>" <?php echo $title; ?><?php echo $attribute; ?>><?php echo $linktype; ?></a><?php
 		break;
 	case 1:
 		// _blank
-?><a <?php echo $class; ?>href="<?php echo $flink; ?>" target="_blank" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a <?php echo $class; ?>href="<?php echo $flink; ?>" target="_blank" <?php echo $title; ?><?php echo $attribute; ?>><?php echo $linktype; ?></a><?php
 		break;
 	case 2:
 		// Use JavaScript "window.open"

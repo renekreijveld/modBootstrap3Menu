@@ -1,10 +1,10 @@
-jQuery(function() {
-	jQuery('.bs3menu .dropdown').hover(function() {
-		jQuery(this).find('.dropdown-menu').first().stop(true, true).show();
+jQuery(function($) {
+	$('.navbar .navbar-nav .dropdown').hover(function() {
+		$(this).find('.dropdown-menu').first().stop(true, true).show();
 	}, function() {
-		jQuery(this).find('.dropdown-menu').first().stop(true, true).hide();
+		$(this).find('.dropdown-menu').first().stop(true, true).hide();
 	});
-	jQuery('.bs3menu .dropdown > a').click(function(){
+	$('.navbar .navbar-nav .dropdown > a').click(function(){
 		location.href = this.href;
 	});
 });
