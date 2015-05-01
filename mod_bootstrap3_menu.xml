@@ -143,14 +143,14 @@
 					type="text"
 					default="fa-caret-down"
 					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARET_LABEL"
-					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARET_DESC" />
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARET_DESC" />
 
 				<field
 					name="bs3FACaretR"
 					type="text"
 					default="fa-caret-right"
 					label="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARETR_LABEL"
-					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3CARETR_DESC" />
+					description="MOD_BOOTSTRAP3_MENU_FIELD_BS3FACARETR_DESC" />
 
 			</fieldset>
 
